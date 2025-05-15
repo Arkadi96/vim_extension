@@ -4,7 +4,7 @@ set background=dark
 colorscheme gruvbox
 
 " Set tab behavior
-set expandtab
+" set expandtab
 set shiftwidth=4   " Indent width for auto-indent
 set softtabstop=4  " Insert 4 spaces when pressing Tab
 set tabstop=4      " Display existing tab as 4 spaces
@@ -42,7 +42,7 @@ autocmd BufWinEnter,ColorScheme * call SetHighlights()
 " Enable spell check for comments and strings only
 augroup c_spellcheck
   autocmd!
-  autocmd FileType c,cpp setlocal spell spelllang=en spellcapcheck=
-  autocmd FileType c,cpp syntax spell toplevel
+  autocmd FileType c,cpp,hpp setlocal spell spelllang=en spellcapcheck=
+  autocmd FileType c,cpp,hpp syntax spell toplevel
 augroup END
 
