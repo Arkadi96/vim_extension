@@ -4,25 +4,31 @@ set background=dark
 colorscheme gruvbox
 
 " Set tab behavior
-" set expandtab
-set shiftwidth=4   " Indent width for auto-indent
-set softtabstop=4  " Insert 4 spaces when pressing Tab
-set tabstop=4      " Display existing tab as 4 spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " Automatically indent new lines when pressing Enter
 set autoindent
 set smartindent
 set formatoptions+=r " Auto-insert comment leader on Enter
 set formatoptions+=o " Auto-insert comment leader when using 'o' or 'O'
+set hlsearch
+set incsearch
 
 " Convert existing tabs to spaces
 autocmd BufWritePre * :retab
 
 " Highlight text that goes beyond 80 columns
-highlight OverLength ctermbg=lightgrey guibg=#333333
+highlight OverLength ctermbg=236 guibg=#3c3836
 
 " Set the highlight color for trailing spaces
 highlight RedundantSpaces ctermbg=red guibg=red
+
+highlight Search    ctermfg=NONE ctermbg=239 guifg=NONE guibg=#504945
+
+highlight IncSearch ctermfg=black ctermbg=214 guifg=#282828 guibg=#fabd2f
 
 " Function to apply both matches
 function! SetHighlights()
