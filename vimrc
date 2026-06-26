@@ -52,3 +52,17 @@ augroup c_spellcheck
   autocmd FileType c,cpp,hpp syntax spell toplevel
 augroup END
 
+" Search for tags file in current and parent directories
+set tags=./tags;,tags;
+
+" Generate tags recursively for C/C++ sources
+nnoremap <C-F9> :!ctags -R --languages=C,C++ --fields=+iaS --extras=+q .<CR><CR>
+
+" Use grep recursively
+set grepprg=grep\ -RnH\ --exclude=tags
+
+" Ctrl+F5 - Search in C/C++ source files under current directory
+nnoremap <C-F5> :execute 'grep! -E "\<' . expand('<cword>') . '\>" --include=*.{c,cpp,h,hpp} --exclude-dir=.svn --exclude-dir=.git .'<CR>:copen<CR>
+
+" Ctrl+F6 - Search in all files under current directory
+nnoremap <C-F6> :execute 'grep! -E "\<' . expand('<cword>') . '\>" .'<CR>:copen<CR>
