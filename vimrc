@@ -4,10 +4,10 @@ set background=dark
 colorscheme gruvbox
 
 " Set tab behavior
-set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " Automatically indent new lines when pressing Enter
 set autoindent
@@ -66,3 +66,11 @@ nnoremap <C-F5> :execute 'grep! -E "\<' . expand('<cword>') . '\>" --include=*.{
 
 " Ctrl+F6 - Search in all files under current directory
 nnoremap <C-F6> :execute 'grep! -E "\<' . expand('<cword>') . '\>" .'<CR>:copen<CR>
+
+" Codeium install
+call plug#begin()
+" the codium plugin
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+call plug#end()
+" Autoplugin
+let g:codeium_disable_bindings = 0

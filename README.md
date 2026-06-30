@@ -13,19 +13,40 @@ A user-friendly, multi-functional Vim configuration for **C** and **C++** develo
   - Trailing whitespace
   - Lines exceeding 80 characters
 - Spell checking for comments
+- AI Code Completion (Codeium)
 
 ## Dependencies
 
-If you do not have **Universal Ctags** installed, install it with:
+If you do not have **Universal Ctags**, **curl** installed, install it with:
 
 ```bash
 sudo apt install universal-ctags
+sudo apt install curl
 ```
 
 Verify the installation:
 
 ```bash
 ctags --version
+curl --version
+```
+
+Install Plugins (vim-plug): Open vim and run:
+
+```bash
+:PlugInstall
+```
+
+AI Code Completion (Codeium): This setup includes Codeium plugin support via vim-plug:
+
+```bash
+:Codeium Auth
+```
+
+Paste your token once. It will be stored locally in:
+
+```bash
+~/.codeium/config.json
 ```
 
 ## Notes
